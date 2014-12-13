@@ -1,15 +1,15 @@
 
 Dispatcher = require './util/dispatcher'
 lodash = require 'lodash'
+jsondiffpatch = require 'jsondiffpatch'
+
+diffpatch = jsondiffpatch.create
+  objectHash: (obj) -> obj.id
 
 module.exports = class CumuloStore extends Dispatcher
   constructor: (options) ->
     super
-    @data = {}
-    @listen = options.listen
-
-  listen: ->
-    # rewrite in project
+    @data = options.data
 
   sync: (data) ->
     @data = data

@@ -1,4 +1,6 @@
 
+lodash = require 'lodash'
+
 module.exports = class CumuloDispatcher
   constructor: ->
     @_listeners = []
